@@ -1,5 +1,7 @@
 /.settings
 /.vscode
 /target
+.DS_Store
 .classpath
 .project
+Thumbs.db
