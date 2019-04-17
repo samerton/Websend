@@ -13,10 +13,12 @@ import org.bukkit.permissions.PermissionAttachmentInfo;
 import org.bukkit.plugin.Plugin;
 
 public class WebsendConsoleCommandSender implements ConsoleCommandSender {
-    /* This class allows tapping into command output from plugins
-     * if the output is sent through the commandsender.
+    /*
+     * This class allows tapping into command output from plugins if the output is
+     * sent through the commandsender.
      *
-     * Tap this method(1.6.4): sendRawMessage, sendMessage(String), sendMessage(String[])
+     * Tap this method(1.6.4): sendRawMessage, sendMessage(String),
+     * sendMessage(String[])
      */
 
     private final ConsoleCommandSender parent;

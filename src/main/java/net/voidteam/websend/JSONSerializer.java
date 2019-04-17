@@ -19,18 +19,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Bukkit is not updated to 1.8 and the server mods based of bukkit are implementing their own patches to support 1.8
- * This is a compatibility problem since the central Bukkit API is now splitting up in several small APIs that all require seperate code to support.
- * This class provides several abstract serialization methods for subclasses to implement according to each API.
+ * Bukkit is not updated to 1.8 and the server mods based of bukkit are
+ * implementing their own patches to support 1.8 This is a compatibility problem
+ * since the central Bukkit API is now splitting up in several small APIs that
+ * all require seperate code to support. This class provides several abstract
+ * serialization methods for subclasses to implement according to each API.
  */
 public abstract class JSONSerializer {
     private static JSONSerializer instance = null;
 
-    public static JSONSerializer getInstance(){
-        if(instance == null){
-            if(Bukkit.getServer().getVersion().contains("Spigot")){
+    public static JSONSerializer getInstance() {
+        if (instance == null) {
+            if (Bukkit.getServer().getVersion().contains("Spigot")) {
                 instance = new SpigotJSONSerializer();
-            }else{
+            } else {
                 instance = new BukkitJSONSerializer();
             }
         }
@@ -51,7 +53,7 @@ public abstract class JSONSerializer {
             player.put("Health", ply.getHealth());
             player.put("IP", ply.getAddress().toString());
             player.put("IsOP", ply.isOp());
-            if(serializeAllData){
+            if (serializeAllData) {
                 player.put("CurrentItemIndex", ply.getInventory().getHeldItemSlot());
                 player.put("MainHandItemID", ply.getInventory().getItemInMainHand().getType().name());
                 player.put("OffHandItemID", ply.getInventory().getItemInOffHand().getType().name());
@@ -115,7 +117,7 @@ public abstract class JSONSerializer {
                     Enchantment cur = enchIter.next();
                     JSONObject enchantment = new JSONObject();
                     {
-                        enchantment.put("Name", cur.getName());
+                        enchantment.put("Name", cur.getKey());
                         enchantment.put("Level", itemStack.getEnchantmentLevel(cur));
                     }
                     enchantments.put(enchantment);
@@ -132,9 +134,9 @@ public abstract class JSONSerializer {
         JSONObject result = null;
         try {
             result = serializeMetaCustom(meta);
-            if(result != null){
-                //Is custom item implemented by subclass
-            }else if (meta instanceof BookMeta) {
+            if (result != null) {
+                // Is custom item implemented by subclass
+            } else if (meta instanceof BookMeta) {
                 result = serializeMetaBook((BookMeta) meta);
             } else if (meta instanceof FireworkEffectMeta) {
                 result = serializeMetaFireworkEffect((FireworkEffectMeta) meta);
@@ -157,18 +159,13 @@ public abstract class JSONSerializer {
             }
         } catch (Exception ex) {
             if (Main.getSettings().isDebugMode()) {
-                Main.getMainLogger().log(
-                        Level.WARNING,
-                        "Exception while serializing item meta data. "
-                        + "This may be caused by a mismatch between the Bukkit and "
-                        + "Websend versions.",
-                        ex);
+                Main.getMainLogger().log(Level.WARNING, "Exception while serializing item meta data. "
+                        + "This may be caused by a mismatch between the Bukkit and " + "Websend versions.", ex);
             } else {
-                Main.getMainLogger().log(
-                        Level.WARNING,
+                Main.getMainLogger().log(Level.WARNING,
                         "Exception while serializing item meta data. "
-                        + "This may be caused by a mismatch between the Bukkit and "
-                        + "Websend versions. Enable debug mode for stack trace.");
+                                + "This may be caused by a mismatch between the Bukkit and "
+                                + "Websend versions. Enable debug mode for stack trace.");
             }
         }
         addNameAndLore(result, meta);
@@ -196,8 +193,7 @@ public abstract class JSONSerializer {
                 Enchantment enchantment = set.getKey();
                 JSONObject enchantmentObj = new JSONObject();
                 {
-                    enchantmentObj.put("Type", enchantment.getId());
-                    enchantmentObj.put("Name", enchantment.getName());
+                    enchantmentObj.put("Name", enchantment.getKey());
                     enchantmentObj.put("MaxLevel", enchantment.getMaxLevel());
                     enchantmentObj.put("StartLevel", enchantment.getStartLevel());
                     enchantmentObj.put("Level", meta.getEnchantLevel(enchantment));
@@ -249,7 +245,8 @@ public abstract class JSONSerializer {
         return metaObj;
     }
 
-    public JSONObject serializeMetaEnchantmentStorage(EnchantmentStorageMeta enchantmentStorageMeta) throws JSONException {
+    public JSONObject serializeMetaEnchantmentStorage(EnchantmentStorageMeta enchantmentStorageMeta)
+            throws JSONException {
         JSONObject metaObj = new JSONObject();
         {
             JSONArray enchantArray = new JSONArray();
@@ -258,8 +255,7 @@ public abstract class JSONSerializer {
                     Enchantment enchantment = set.getKey();
                     JSONObject enchantmentObj = new JSONObject();
                     {
-                        enchantmentObj.put("Type", enchantment.getId());
-                        enchantmentObj.put("Name", enchantment.getName());
+                        enchantmentObj.put("Name", enchantment.getKey());
                         enchantmentObj.put("MaxLevel", enchantment.getMaxLevel());
                         enchantmentObj.put("StartLevel", enchantment.getStartLevel());
                         enchantmentObj.put("Level", set.getValue());
@@ -300,7 +296,7 @@ public abstract class JSONSerializer {
             }
 
             PotionData data = potionMeta.getBasePotionData();
-            if(data != null){
+            if (data != null) {
                 JSONObject potionTypeObj = new JSONObject();
                 {
                     potionTypeObj.put("Name", data.getType().name());
