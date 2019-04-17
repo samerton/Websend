@@ -22,11 +22,13 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 public class WebsendPlayerCommandSender implements Player {
-    /* This class allows tapping into command output from plugins
-     * if the output is sent through the commandsender.
-     * Note to anyone having compilation problems: Compile against Bukkit, not CraftBukkit.
+    /*
+     * This class allows tapping into command output from plugins if the output is
+     * sent through the commandsender. Note to anyone having compilation problems:
+     * Compile against Bukkit, not CraftBukkit.
      *
-     * Tap this method(1.6.4): sendRawMessage, sendMessage(String), sendMessage(String[])
+     * Tap this method(1.6.4): sendRawMessage, sendMessage(String),
+     * sendMessage(String[])
      */
 
     private final Player baseObject;
@@ -573,7 +575,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public java.util.List<org.bukkit.block.Block> getLastTwoTargetBlocks(java.util.HashSet<java.lang.Byte> param0, int param1) {
+    public java.util.List<org.bukkit.block.Block> getLastTwoTargetBlocks(java.util.HashSet<java.lang.Byte> param0,
+            int param1) {
         return baseObject.getLastTwoTargetBlocks(param0, param1);
     }
 
@@ -773,7 +776,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public boolean teleport(org.bukkit.Location param0, org.bukkit.event.player.PlayerTeleportEvent.TeleportCause param1) {
+    public boolean teleport(org.bukkit.Location param0,
+            org.bukkit.event.player.PlayerTeleportEvent.TeleportCause param1) {
         return baseObject.teleport(param0, param1);
     }
 
@@ -783,7 +787,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public boolean teleport(org.bukkit.entity.Entity param0, org.bukkit.event.player.PlayerTeleportEvent.TeleportCause param1) {
+    public boolean teleport(org.bukkit.entity.Entity param0,
+            org.bukkit.event.player.PlayerTeleportEvent.TeleportCause param1) {
         return baseObject.teleport(param0, param1);
     }
 
@@ -1018,7 +1023,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public org.bukkit.permissions.PermissionAttachment addAttachment(org.bukkit.plugin.Plugin param0, java.lang.String param1, boolean param2) {
+    public org.bukkit.permissions.PermissionAttachment addAttachment(org.bukkit.plugin.Plugin param0,
+            java.lang.String param1, boolean param2) {
         return baseObject.addAttachment(param0, param1, param2);
     }
 
@@ -1028,7 +1034,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public org.bukkit.permissions.PermissionAttachment addAttachment(org.bukkit.plugin.Plugin param0, java.lang.String param1, boolean param2, int param3) {
+    public org.bukkit.permissions.PermissionAttachment addAttachment(org.bukkit.plugin.Plugin param0,
+            java.lang.String param1, boolean param2, int param3) {
         return baseObject.addAttachment(param0, param1, param2, param3);
     }
 
@@ -1083,7 +1090,8 @@ public class WebsendPlayerCommandSender implements Player {
     }
 
     @Override
-    public void abandonConversation(org.bukkit.conversations.Conversation param0, org.bukkit.conversations.ConversationAbandonedEvent param1) {
+    public void abandonConversation(org.bukkit.conversations.Conversation param0,
+            org.bukkit.conversations.ConversationAbandonedEvent param1) {
         baseObject.abandonConversation(param0, param1);
     }
 
@@ -1203,7 +1211,8 @@ public class WebsendPlayerCommandSender implements Player {
         return baseObject.getStatistic(statistic, entityType);
     }
 
-    public void incrementStatistic(Statistic statistic, EntityType entityType, int amount) throws IllegalArgumentException {
+    public void incrementStatistic(Statistic statistic, EntityType entityType, int amount)
+            throws IllegalArgumentException {
         baseObject.incrementStatistic(statistic, entityType, amount);
     }
 
@@ -1267,7 +1276,8 @@ public class WebsendPlayerCommandSender implements Player {
         baseObject.spawnParticle(prtcl, lctn, i, d, d1, d2, t);
     }
 
-    public <T> void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4, double d5, T t) {
+    public <T> void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4,
+            double d5, T t) {
         baseObject.spawnParticle(prtcl, d, d1, d2, i, d3, d4, d5, t);
     }
 
@@ -1275,15 +1285,18 @@ public class WebsendPlayerCommandSender implements Player {
         baseObject.spawnParticle(prtcl, lctn, i, d, d1, d2, d3);
     }
 
-    public void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4, double d5, double d6) {
+    public void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4, double d5,
+            double d6) {
         baseObject.spawnParticle(prtcl, d, d1, d2, i, d3, d4, d5, d6);
     }
 
-    public <T> void spawnParticle(Particle prtcl, Location lctn, int i, double d, double d1, double d2, double d3, T t) {
+    public <T> void spawnParticle(Particle prtcl, Location lctn, int i, double d, double d1, double d2, double d3,
+            T t) {
         baseObject.spawnParticle(prtcl, lctn, i, d, d1, d2, d3, t);
     }
 
-    public <T> void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4, double d5, double d6, T t) {
+    public <T> void spawnParticle(Particle prtcl, double d, double d1, double d2, int i, double d3, double d4,
+            double d5, double d6, T t) {
         baseObject.spawnParticle(prtcl, d, d1, d2, i, d3, d4, d5, d6, t);
     }
 
@@ -1377,5 +1390,29 @@ public class WebsendPlayerCommandSender implements Player {
 
     public PotionEffect getPotionEffect(PotionEffectType pet) {
         return baseObject.getPotionEffect(pet);
+    }
+
+    public boolean isHandRaised() {
+        return baseObject.isHandRaised();
+    }
+
+    public boolean addScoreboardTag(String tag) {
+        return baseObject.addScoreboardTag(tag);
+    }
+
+    public int getPortalCooldown() {
+        return baseObject.getPortalCooldown();
+    }
+
+    public Set<String> getScoreboardTags() {
+        return baseObject.getScoreboardTags();
+    }
+
+    public boolean removeScoreboardTag(String tag) {
+        return baseObject.removeScoreboardTag(tag);
+    }
+
+    public void setPortalCooldown(int cooldown) {
+        baseObject.setPortalCooldown(cooldown);
     }
 }
