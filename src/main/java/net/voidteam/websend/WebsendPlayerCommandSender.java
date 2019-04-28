@@ -26,6 +26,7 @@ import org.bukkit.entity.*;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.MainHand;
 import org.bukkit.inventory.Merchant;
+import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -1356,5 +1357,13 @@ public class WebsendPlayerCommandSender implements Player {
 
     public void playNote(Location loc, byte instrument, byte note) {
         baseObject.playNote(loc, instrument, note);
+    }
+
+    public Pose getPose() {
+        return baseObject.getPose();
+    }
+
+    public PersistentDataContainer getPersistentDataContainer() {
+        return baseObject.getPersistentDataContainer();
     }
 }

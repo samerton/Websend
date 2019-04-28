@@ -4,7 +4,7 @@
   <groupId>net.voidteam.websend</groupId>
   <artifactId>Websend</artifactId>
   <name>Websend</name>
-  <version>2.5.9-SNAPSHOT</version>
+  <version>2.5.10-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <build>
     <plugins>
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
-      <version>1.13.2-R0.1-SNAPSHOT</version>
+      <version>1.14-R0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

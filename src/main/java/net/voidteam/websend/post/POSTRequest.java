@@ -169,7 +169,7 @@ public class POSTRequest {
 
             JSONObject serverSettings = new JSONObject();
             {
-                serverSettings.put("Name", server.getServerName());
+                serverSettings.put("Name", server.getName());
                 serverSettings.put("Build", server.getVersion());
                 serverSettings.put("Port", server.getPort());
                 serverSettings.put("NetherEnabled", server.getAllowNether());
