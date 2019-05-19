@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.voidteam.websend</groupId>
+    <groupId>me.samerton.websend</groupId>
     <artifactId>Websend</artifactId>
-    <version>2.5.10-SNAPSHOT</version>
+    <version>2.5.11-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Websend</name>
@@ -109,7 +109,7 @@
                         <lib>${java.home}/lib/jsse.jar</lib>
                     </libs>
                     <options>
-                        <option>-keep class net.voidteam.websend.**</option>
+                        <option>-keep class me.samerton.websend.**</option>
                     </options>
                 </configuration>
             </plugin>

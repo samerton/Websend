@@ -1,8 +1,8 @@
 name: Websend
-main: net.voidteam.websend.Main
-version: 2.5.10
+main: me.samerton.websend.Main
+version: 2.5.11
 description: Plug-in to enable variables-transfer to the interwebs and backwards.
-author: Waterflames, Colbydude
+author: Waterflames, Colbydude, Samerton
 commands:
    websend:
       description: Starts communication.
